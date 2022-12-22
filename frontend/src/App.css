@@ -1,0 +1,19 @@
+* {
+  background-color: #FDF5BF
+}
+
+.header {
+  background-color: #ffd5ff;
+  text-align: center;
+  padding: 5px;
+  font-size: 60px;
+  color: #ffcc00;
+  -webkit-text-stroke: 2px #0072bb;
+}
+
+.header::before {
+  content: "Pokedex";
+}
+
+
+

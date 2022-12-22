@@ -1,0 +1,159 @@
+section {
+    width: 1100px;
+    margin:auto;
+}
+
+div.one {
+    box-shadow: 1px 2px 200px 100px blueviolet;
+    margin-top: 15px;
+    background-color: white;
+    width: 0px;
+    height: 600px;
+    border-radius: 300px 300px 300px 300px;
+    margin: auto;
+    display: block;
+}
+
+div.two {
+    display: block;
+    background-color: rgb(103, 7, 112);
+    height: 220px;
+    width: 460px;
+    margin: auto;
+    margin-top: -520px;
+    border-radius: 500px 500px 0px 0px;
+    border: 3px solid rgb(8, 2, 10);
+    box-shadow: 0px 20px 100px 20px blueviolet;
+}
+
+div.three {
+    background-color: #9b9999;
+    display: block;
+    height: 220px;
+    width: 460px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 0px 0px 500px 500px;
+    border: 3px solid rgb(8, 2, 10);
+    box-shadow: 0px 20px 100px 20px black;
+}
+
+div.four {
+    background-color: rgb(129, 19, 80);
+    height: 140px;
+    width: 140px;
+    border-radius: 1200px 200px 1200px 200px;
+    padding: 0px 20px 40px 20px;
+    position: absolute;
+    display: block;
+    margin-left: 325px;
+    margin-top: -220px;
+    border: 3px solid black;
+}
+
+div.five {
+    background-color: rgb(129, 19, 80);
+    height: 140px;
+    width: 140px;
+    border-radius: 200px 1200px 200px 1200px;
+    padding: 0px 20px 40px 20px;
+    position: absolute;
+    display: block;
+    margin-left: 590px;
+    margin-top: -220px;
+    border: 3px solid black;
+}
+
+div.six {
+    display: block;
+    background-color: rgb(44, 44, 44);
+    height: 35px;
+    margin-left: 317px;
+    margin-right: 320px;
+    padding-right: 446px;
+    position: absolute;
+    border-bottom: 3px solid black;
+    border-right: 16px solid rgb(43, 42, 42);
+    border-left: 4px solid rgb(43, 42, 42);
+    box-shadow: 1px 1px 200px 0px black;
+}
+
+div.seven {
+    display: block;
+    position: absolute;
+    padding-right: 450px;
+    background-color: rgb(44, 44, 4);
+    margin-left: 485px;
+    margin-top: -50px;
+    padding: 60px;
+    padding-top: 50px;
+    border-radius: 1000px 1000px 1000px 1000px;
+    border: 3px solid black;
+}
+
+div.eight {
+    background-color: #cecece;
+    padding: 40px;
+    position: absolute;
+    display: block;
+    border-radius: 100px;
+    margin-left: 505px;
+    margin-top: -30px;
+    border-style: inset;
+    box-shadow: 1px 1px 50px 30px blueviolet;
+    padding-top: 30px;
+}
+
+div.nine {
+    position: absolute;
+    background-color: #cecece;
+    color: #cecece;
+    padding: 25px;
+    display: block;
+    padding-top: 10px;
+    border-radius: 100px;
+    margin-left: 520px;
+    margin-top: -12px;
+    border-style: groove;
+    box-shadow: 1px 1px 6px black;
+    cursor: pointer;
+
+    /*Prevent text selection on most browsers*/
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.nine:hover {
+    box-shadow: 1px 1px 15px black;
+}
+
+div.nine:active {
+    transform: translateY(2px);
+}
+
+.masterball-name {
+    font-size: 70pt;
+    position: absolute;
+    margin-left: 515px;
+    margin-top: -130px;
+    transform: rotate(180deg);
+    color: white;
+    font-family: 'Angella', sans-serif;
+    background-color: transparent;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.show {
+    color: #FFFFFF;
+    text-align: center;
+
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+     opacity: 1;
+}
