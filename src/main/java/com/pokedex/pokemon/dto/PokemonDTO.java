@@ -30,6 +30,16 @@ public class PokemonDTO {
         }
         return pkm;
     }
+    
+    public String toJson() {
+        String jsonString = null;
+        try { 
+            jsonString = new ObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            logger.error("[POKEMON_DTO] Error when converting object to json", e);
+        }
+        return jsonString;
+    }
 
     @Override
     public String toString() {

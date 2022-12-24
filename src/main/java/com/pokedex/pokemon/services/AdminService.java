@@ -64,7 +64,7 @@ public class AdminService {
         List<Pokemon> pokemons = this.repository.findAll();
         List<PokemonDTO> pokemonsDTO = new ArrayList<>();
         pokemons.forEach(pkm -> pokemonsDTO.add(pkm.toDTO()));
-        return pokemonsDTO.stream().map(pokemonDTO -> pokemonDTO.toString()).collect(Collectors.toList());
+        return pokemonsDTO.stream().map(pokemonDTO -> pokemonDTO.toJson()).collect(Collectors.toList());
     }
     
 }
