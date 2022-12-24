@@ -1,10 +1,12 @@
+.no-background-color {
+    background-color: transparent;
+}
 section {
     width: 1100px;
     margin:auto;
 }
 
 div.one {
-    box-shadow: 1px 2px 200px 100px blueviolet;
     margin-top: 15px;
     background-color: white;
     width: 0px;
@@ -23,7 +25,6 @@ div.two {
     margin-top: -520px;
     border-radius: 500px 500px 0px 0px;
     border: 3px solid rgb(8, 2, 10);
-    box-shadow: 0px 20px 100px 20px blueviolet;
 }
 
 div.three {
@@ -35,7 +36,6 @@ div.three {
     margin-top: 20px;
     border-radius: 0px 0px 500px 500px;
     border: 3px solid rgb(8, 2, 10);
-    box-shadow: 0px 20px 100px 20px black;
 }
 
 div.four {
@@ -141,19 +141,4 @@ div.nine:active {
     color: white;
     font-family: 'Angella', sans-serif;
     background-color: transparent;
-}
-
-.hide{
-    opacity: 0;
-}
-
-.show {
-    color: #FFFFFF;
-    text-align: center;
-
-    -webkit-transition: opacity 3s ease-in-out;
-    -moz-transition: opacity 3s ease-in-out;
-    -ms-transition: opacity 3s ease-in-out;
-    -o-transition: opacity 3s ease-in-out;
-     opacity: 1;
 }
