@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import PokemonService from './client/PokemonService';
 import Masterball from './Masterball';
-import PokemonCards from './PokemonCards';
+import Pokemon from './model/Pokemon';
+import PaginateCards from './PaginateCards';
 
 function App() {
   const [loading, setLoading] = React.useState(true);
+  const [pokemons, setPokemons] = React.useState<Array<Pokemon>>([]);
   
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -13,6 +16,13 @@ function App() {
 
   const onOpen = () => {
     setLoading(false);
+    retrieveAllPokemons();
+  }
+
+  const retrieveAllPokemons = () => {
+    PokemonService.getAllPokemons().then((res) => {
+      setPokemons(res.map(pkm => JSON.parse(pkm)));
+  })
   }
 
   return (
@@ -21,7 +31,7 @@ function App() {
       { loading && <Masterball onOpen={onOpen}/> }
 
       { !loading && 
-        <PokemonCards/>
+        <PaginateCards pokemons={pokemons}/>
       }
     </>
   );
