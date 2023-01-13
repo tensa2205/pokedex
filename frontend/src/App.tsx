@@ -16,6 +16,7 @@ function App() {
     document.body.style.backgroundColor = "#FDF5BF";
   }, [])
 
+  //TODO - FIX SEARCH THAT IS NOT WORKING.
   //Debounced useEffect
   useEffect(() => {
     const getResult = setTimeout(() => {

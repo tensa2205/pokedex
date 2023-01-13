@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./Card.css";
+import "./types.css"
 import Pokemon from "./model/Pokemon";
+import { Type } from "./model/Type";
 
 interface Props {
     pokemon: Pokemon
@@ -9,6 +11,10 @@ interface Props {
 export default function Card(props : Props) {
     const [pokemon, setPokemon] = React.useState<Pokemon>();
     useEffect(() => setPokemon(props.pokemon), [props.pokemon]);
+
+    const getClassType = (type : String) => {
+        return Type[type as keyof typeof Type];
+    }
     return (
             <div className="card">
                 
@@ -17,8 +23,9 @@ export default function Card(props : Props) {
                 <div className="container">
                     {pokemon?.name}
                     <div style={{display: "flex", flexDirection: "row", margin: "15px"}}>
-                    <img className="img type" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Normal_Pokemon.svg" alt="Type"></img>
-                    <img className="img type" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Normal_Pokemon.svg" alt="Type"></img>
+                        <div className="types">
+                        {pokemon?.types.map(type => (<div className={`type ${getClassType(type)}`}>{type}</div>))}
+                        </div>
                     </div>
                 </div>
             </div>        
