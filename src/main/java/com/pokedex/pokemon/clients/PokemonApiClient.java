@@ -15,11 +15,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class PokemonApiClient {
-    private WebClient client;
+    private final WebClient client;
     private static final Logger logger = LoggerFactory.getLogger(PokemonApiClient.class);
     private static final String API_BASE_URL = "https://pokeapi.co/api/v2/";
     private static final String POKEMON = "pokemon/";
-    private static final int NUMBER_OF_POKEMONS = 50;
     
     PokemonApiClient() {
         this.client = WebClient.builder()
@@ -29,11 +28,6 @@ public class PokemonApiClient {
                         .build();
     }
     
-    public List<PokemonDTO> getAllPokemons() {
-        List<PokemonDTO> result = new ArrayList<>();
-        getPokemonIDs().forEach((id) -> result.add(PokemonDTO.fromJSON(getPokemonJSONFromAPI(id))));
-        return result;
-    }
     
     //ADD CACHING
     public List<PokemonDTO> getPokemonsInRangeId(Pair<Integer, Integer> idRange) {
@@ -51,9 +45,6 @@ public class PokemonApiClient {
         return client.get().uri(POKEMON + id).retrieve().bodyToMono(String.class).block();
     }
     
-    private IntStream getPokemonIDs() {
-        return IntStream.rangeClosed(1, NUMBER_OF_POKEMONS);
-    }
     
     private IntStream getPokemonIDsInRange(Pair<Integer, Integer> idRange) {
         return IntStream.rangeClosed(idRange.getFirst(), idRange.getSecond());
