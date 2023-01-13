@@ -4,11 +4,20 @@
   padding: 5px;
   font-size: 50px;
   color: #ffcc00;
+}
+
+.header > .page-title {
   -webkit-text-stroke: 2px #0072bb;
 }
 
-.header::before {
-  content: "Pokedex";
+.search-bar {
+  text-align: left;
+  width: 25%;
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  margin: 20px;
+  color:#099ffd
 }
 
 
