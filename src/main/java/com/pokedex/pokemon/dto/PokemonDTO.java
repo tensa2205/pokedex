@@ -4,6 +4,9 @@ package com.pokedex.pokemon.dto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.pokedex.pokemon.entities.Type;
+import java.util.List;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +21,7 @@ public class PokemonDTO {
     private Long id;
     private String name;
     private String imageUrl;
+    private Set<String> types;
     
     private static final Logger logger = LoggerFactory.getLogger(PokemonDTO.class);
     
@@ -43,10 +47,6 @@ public class PokemonDTO {
 
     @Override
     public String toString() {
-        return "PokemonDTO{" + "id=" + id + ", name=" + name + ", imageUrl=" + imageUrl + '}';
+        return "PokemonDTO{" + "id=" + id + ", name=" + name + ", imageUrl=" + imageUrl + ", types=" + types + '}';
     }
-
-    
-    
-    
 }
