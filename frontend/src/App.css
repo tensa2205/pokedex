@@ -13,11 +13,20 @@
 .search-bar {
   text-align: left;
   width: 25%;
-  position: absolute;
   top: 0;
   font-size: 20px;
   margin: 20px;
   color:#099ffd
+}
+
+.search-select {
+  text-align: center;
+  width: 25%;
+  top: 0;
+  font-size: 20px;
+  margin: 20px;
+  color:#099ffd;
+  z-index: 2;
 }
 
 
