@@ -11,22 +11,33 @@
 }
 
 .search-bar {
-  text-align: left;
-  width: 25%;
-  top: 0;
-  font-size: 20px;
+  font-size: 25px;
   margin: 20px;
   color:#099ffd
 }
 
+.search-term,.search-select {
+  border-radius: 5px 5px 5px 5px;
+  border: 3px solid #00B4CC;
+}
+.search-term {
+  padding: 8px;
+  height: 21px;
+  outline: none;
+  color: #9DBFAF;
+  text-align: center;
+}
+
 .search-select {
   text-align: center;
-  width: 25%;
-  top: 0;
-  font-size: 20px;
+  font-size: 15px;
   margin: 20px;
   color:#099ffd;
   z-index: 2;
+}
+
+.search-term:focus{
+  color: #00B4CC;
 }
 
 

@@ -1,11 +1,11 @@
 .cards-section {
-    height: 85%;
+    height: 80%;
     width: 95%;
     z-index: 1;
     position: absolute;
     background: #CCA9DD;
     border-radius: 15px;
     margin-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     margin-left: 45px;
 }

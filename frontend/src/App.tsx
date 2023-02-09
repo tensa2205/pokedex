@@ -87,16 +87,15 @@ function App() {
 
   return (
     <>
-      <div className="header" style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+      <div className="header" style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
         <div className="page-title">Pokedex</div>
       { !loading && 
-          <>
-          <div className='search-bar'>
-            <label htmlFor="fname">Search by name: </label>
-            <input type="text" id="pname" name="pname" onChange={onChange}/>
+          <div style={{display: "flex", flexDirection: "row"}}>
+            <div className='search-bar'>
+              <input className='search-term' type="text" placeholder='Search by name' id="pname" name="pname" onChange={onChange}/>
+            </div>
+            <Select className='search-select' options={options} onChange={onTypeSelect} placeholder="Select type/s" isMulti/>
           </div>
-          <Select className='search-select' options={options} onChange={onTypeSelect} isMulti/>
-          </>
         }
       </div>
       { loading && <Masterball onOpen={onOpen}/> }
