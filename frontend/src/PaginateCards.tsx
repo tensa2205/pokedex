@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive'
 import ReactPaginate from 'react-paginate';
 import Pokemon from './model/Pokemon';
 import PokemonCards from './PokemonCards';
@@ -12,8 +13,13 @@ interface Props {
 const PaginateCards = (props: Props) => {
     const [pokemons, setPokemons] = useState<Array<Pokemon>>([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonsPerPage] = useState(10);
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
 
+    useMediaQuery({ query: '(min-width: 1824px)' }, undefined, () => setPokemonsPerPage(10));
+    useMediaQuery({ query: '(min-height: 910px)' }, undefined, () => setPokemonsPerPage(10));
+    useMediaQuery({ query: '(max-width: 1224px)' }, undefined, () => setPokemonsPerPage(5));
+    useMediaQuery({ query: '(max-height: 900px)' }, undefined, () => setPokemonsPerPage(5));
+    
 
     useEffect(() => { 
         setPokemons(props.pokemons);

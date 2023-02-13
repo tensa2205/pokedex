@@ -16,7 +16,7 @@ export default function PokemonCards(props: Props) {
     }, [props.pokemons])
 
     return (
-        <motion.div className="cards-section" style={{display: "flex", flexFlow: "row wrap",flexDirection: "row", justifyContent: "space-between"}} animate={{ y: [850, 0], opacity: 1 }} transition={{ delay: .5}}>
+        <motion.div className="cards-section" animate={{ y: [850, 0], opacity: 1 }} transition={{ delay: .5}}>
             {pokemons.length !== 0 && pokemons.map((pokemon) => <Card key={pokemon.id} pokemon={pokemon}/>)}
         </motion.div>
     )

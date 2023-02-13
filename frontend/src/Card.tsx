@@ -19,7 +19,6 @@ export default function Card(props : Props) {
             <div className="card">
                 
                 <img className="img" src={pokemon?.imageUrl} alt="Avatar"></img>
-                {/*IMPLEMENT PAGINATION BEFORE SHOWING IMAGES https://www.npmjs.com/package/react-paginate --> FRONTEND PAGINATION*/}
                 <div className="container">
                     {pokemon?.name}
                     <div style={{display: "flex", flexDirection: "row", margin: "15px"}}>
@@ -31,5 +30,3 @@ export default function Card(props : Props) {
             </div>        
     )
 }
-
-//https://betterprogramming.pub/make-a-flexbox-react-component-e96a038da7ec
