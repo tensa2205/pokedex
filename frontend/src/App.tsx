@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Select from 'react-select'
+import Select, { StylesConfig } from 'react-select'
 import './App.css';
 import PokemonService from './client/PokemonService';
 import Masterball from './Masterball';
@@ -7,13 +7,47 @@ import Pokemon from './model/Pokemon';
 import { Type } from './model/Type';
 import PaginateCards from './PaginateCards';
 
-function capitalize(s : string) {
-  return s[0].toUpperCase() + s.slice(1);
-}
-
 interface Option {
   value: string,
   label: string
+}
+
+function retrieveHexColorFromType(data : Option) : string {
+  return getComputedStyle(document.documentElement).getPropertyValue(`--${data.value.toLowerCase()}`);
+}
+
+const colourStyles: StylesConfig<Option, true> = {
+  control: (styles) => ({ ...styles, backgroundColor: 'white' }),
+  multiValue: (styles, { data }) => {
+    const color = retrieveHexColorFromType(data);
+    return {
+      ...styles,
+      backgroundColor: color,
+    };
+  },
+  multiValueLabel: (styles, { data }) => {
+    const color = retrieveHexColorFromType(data);
+    return {
+      ...styles,
+      color: "white",
+      backgroundColor: color,
+    };
+  },
+  multiValueRemove: (styles, { data }) => {
+    const color = retrieveHexColorFromType(data);
+    return {
+      ...styles,
+      color: color,
+      ':hover': {
+        color: "white",
+        backgroundColor: color
+      }
+    };
+  },
+};
+
+function capitalize(s : string) {
+  return s[0].toUpperCase() + s.slice(1);
 }
 
 const generateOptions = () : Array<Option> => {
@@ -94,7 +128,7 @@ function App() {
             <div className='search-bar'>
               <input className='search-term' type="text" placeholder='Search by name' id="pname" name="pname" onChange={onChange}/>
             </div>
-            <Select className='search-select' options={options} onChange={onTypeSelect} placeholder="Select type/s" isMulti/>
+            <Select closeMenuOnSelect={false} className='search-select' options={options} onChange={onTypeSelect} styles={colourStyles} placeholder="Select type/s" isMulti/>
           </div>
         }
       </div>
